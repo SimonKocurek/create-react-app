@@ -20,6 +20,7 @@ const host = process.env.HOST || '0.0.0.0';
 const sockHost = process.env.WDS_SOCKET_HOST;
 const sockPath = process.env.WDS_SOCKET_PATH; // default: '/ws'
 const sockPort = process.env.WDS_SOCKET_PORT;
+const writeToDisk = process.env.WRITE_TO_DISK;
 
 module.exports = function (proxy, allowedHost) {
   const disableFirewall =
@@ -77,6 +78,8 @@ module.exports = function (proxy, allowedHost) {
         ignored: ignoredFiles(paths.appSrc),
       },
     },
+    writeToDisk: Boolean(writeToDisk),
+
     client: {
       webSocketURL: {
         // Enable custom sockjs pathname for websocket connection to hot reloading server.
