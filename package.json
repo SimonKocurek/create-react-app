@@ -3,6 +3,7 @@
   "workspaces": [
     "packages/*"
   ],
+  "create-react-app": "https://github.com/SimonKocurek/create-react-app/tarball/68f8e437f0a7841a774539a10728bd583194a069",
   "scripts": {
     "build": "cd packages/react-scripts && node bin/react-scripts.js build",
     "changelog": "lerna-changelog",
